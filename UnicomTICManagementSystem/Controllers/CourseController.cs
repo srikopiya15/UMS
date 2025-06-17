@@ -18,7 +18,7 @@ namespace UnicomTICManagementSystem.Controllers
            
              using (var conn = DbConfic.GetConnection())
              {
-                string query = @"SELECT * FROM Course;";
+                string query = @"SELECT * FROM Course";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
 
@@ -30,7 +30,7 @@ namespace UnicomTICManagementSystem.Controllers
                         {
                             course.Add(new Course
                             {
-                                Id = reader.GetInt32(0),
+                                courseId = reader.GetInt32(0),
                                 CourseName = reader.GetString(1),
                                 StartDate = reader.GetDateTime(2),
                                 EndDate = reader.GetDateTime(3),
@@ -42,12 +42,17 @@ namespace UnicomTICManagementSystem.Controllers
                 }
              }
              return course;
+         
         }
-        public async void AddAsync(Course course) 
+        public CourseController ()
+        { 
+
+        }
+        public async Task AddAsync(Course course)
         {
             using (var conn = DbConfic.GetConnection())
             {
-                string query = "INSERT INTO Course(CourseName, Startdate, Enddate) VALUES(@name,@startdate,@enddate);";
+                string query = "INSERT INTO Course(Name, Startdate, Enddate) VALUES(@name,@startdate,@enddate);";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
@@ -59,35 +64,39 @@ namespace UnicomTICManagementSystem.Controllers
             }
         }
 
-        public async void UpdateAsync(Course course) 
+
+
+        public async Task UpdateAsync(Course course)
         {
-            using (var conn = DbConfic.GetConnection()) 
+            using (var conn = DbConfic.GetConnection())
             {
-                string query= "UPDATE Course SET Coursename = @name, Startdate = @startdate,Enddate = @enddate WHERE id = @id;";
-                
-                using (SQLiteCommand cmd = new SQLiteCommand(query, conn)) 
+                string query = "UPDATE Course SET Name = @name, Startdate = @startdate, Enddate = @enddate WHERE ID = @id;";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", course.CourseName);
                     cmd.Parameters.AddWithValue("@startdate", course.StartDate);
                     cmd.Parameters.AddWithValue("@enddate", course.EndDate);
-                    cmd.Parameters.AddWithValue("@id", course.Id);
+                    cmd.Parameters.AddWithValue("@id", course.courseId);
                     await cmd.ExecuteNonQueryAsync();
                 }
             }
         }
-        public async void DeleteAsync(Course course) 
+
+        public async Task DeleteAsync(int id)
         {
-            using(var conn= DbConfic.GetConnection()) 
+            using (var conn = DbConfic.GetConnection())
             {
-                string query= "DELETE FROM Course WHERE ID=@Id";
+                string query = "DELETE FROM Course WHERE ID=@Id";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Id", course.Id);
+                    cmd.Parameters.AddWithValue("@Id", id);
                     await cmd.ExecuteNonQueryAsync();
                 }
-
             }
         }
+
+        
     }
 }

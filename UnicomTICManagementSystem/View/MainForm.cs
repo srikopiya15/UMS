@@ -55,5 +55,11 @@ namespace UnicomTICManagementSystem.View
         {
 
         }
+
+        private void btn_course_Click(object sender, EventArgs e)
+        {
+            CourseForm courseForm = new CourseForm();
+            LoadFormInPanel(courseForm);
+        }
     }
 }

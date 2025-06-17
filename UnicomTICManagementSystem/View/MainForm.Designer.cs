@@ -35,7 +35,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_course = new System.Windows.Forms.Button();
             this.btn_student = new System.Windows.Forms.Button();
             this.btn_login = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -55,13 +55,13 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Violet;
+            this.panel3.BackColor = System.Drawing.Color.Plum;
             this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.btn_course);
             this.panel3.Controls.Add(this.btn_student);
             this.panel3.Controls.Add(this.btn_login);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -109,25 +109,32 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(24, 184);
+            this.button4.Location = new System.Drawing.Point(27, 169);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 23);
+            this.button4.Size = new System.Drawing.Size(108, 26);
             this.button4.TabIndex = 3;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_course
             // 
-            this.button3.Location = new System.Drawing.Point(24, 143);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_course.FlatAppearance.BorderSize = 0;
+            this.btn_course.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_course.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_course.Location = new System.Drawing.Point(26, 124);
+            this.btn_course.Name = "btn_course";
+            this.btn_course.Size = new System.Drawing.Size(109, 23);
+            this.btn_course.TabIndex = 2;
+            this.btn_course.Text = "COURSE";
+            this.btn_course.UseVisualStyleBackColor = true;
+            this.btn_course.Click += new System.EventHandler(this.btn_course_Click);
             // 
             // btn_student
             // 
-            this.btn_student.Location = new System.Drawing.Point(25, 105);
+            this.btn_student.FlatAppearance.BorderSize = 0;
+            this.btn_student.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_student.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_student.Location = new System.Drawing.Point(27, 83);
             this.btn_student.Name = "btn_student";
             this.btn_student.Size = new System.Drawing.Size(108, 22);
             this.btn_student.TabIndex = 1;
@@ -137,7 +144,10 @@
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(25, 65);
+            this.btn_login.FlatAppearance.BorderSize = 0;
+            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_login.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_login.Location = new System.Drawing.Point(26, 42);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(109, 23);
             this.btn_login.TabIndex = 0;
@@ -147,19 +157,23 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.BackColor = System.Drawing.Color.Plum;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(167, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(633, 26);
+            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.panel2.Size = new System.Drawing.Size(633, 450);
             this.panel2.TabIndex = 1;
             // 
             // panel4
             // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(167, 26);
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Location = new System.Drawing.Point(167, 42);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(633, 424);
+            this.panel4.Size = new System.Drawing.Size(633, 408);
             this.panel4.TabIndex = 2;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -190,7 +204,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_course;
         private System.Windows.Forms.Button btn_student;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Button button8;

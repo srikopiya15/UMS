@@ -23,10 +23,13 @@ namespace UnicomTICManagementSystem.Data
 
                                   CREATE TABLE IF NOT EXISTS Timetable(ID INTEGER PRIMARY KEY AUTOINCREMENT ,TimeSlot TEXT,Subjectname TEXT NOT NULL);
 
+                                  CREATE TABLE IF NOT EXISTS Course(ID INTEGER PRIMARY KEY AUTOINCREMENT ,Name TEXT,Startdate TEXT ,Enddate TEXT );                                                                                                                 );
+                                   
+
                                 ";
                 using (SQLiteCommand cmd = new SQLiteCommand(query,conn)) 
                 {
-                    cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQueryAsync();
                 }
             }
         }
