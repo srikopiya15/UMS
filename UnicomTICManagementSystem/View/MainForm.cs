@@ -37,6 +37,7 @@ namespace UnicomTICManagementSystem.View
         {
             LoginForm loginForm = new LoginForm();
             LoadFormInPanel(loginForm);
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,6 +61,24 @@ namespace UnicomTICManagementSystem.View
         {
             CourseForm courseForm = new CourseForm();
             LoadFormInPanel(courseForm);
+        }
+
+        private void btn_lecture_Click(object sender, EventArgs e)
+        {
+            LectureForm lectureForm = new LectureForm();
+            LoadFormInPanel(lectureForm);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            StaffForm  staffForm = new StaffForm();
+            LoadFormInPanel(staffForm);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            RoomForm roomForm = new RoomForm();
+            LoadFormInPanel(roomForm);
         }
     }
 }

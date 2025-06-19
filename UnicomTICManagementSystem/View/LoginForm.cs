@@ -25,6 +25,7 @@ namespace UnicomTICManagementSystem.View
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            
             string[,] credendials = new string[,]
 {
             {"Admin", "admin", "admin@123"},
@@ -58,11 +59,18 @@ namespace UnicomTICManagementSystem.View
             if (isValid)
             {
                 MessageBox.Show($"Login successful as {role}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+
+                this.Hide(); 
             }
             else
             {
                 MessageBox.Show("Invalid credentials. Please try again", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
         }
 

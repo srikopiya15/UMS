@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnicomTICManagementSystem.Controllers
+namespace UnicomTICManagementSystem.Models
 {
-    internal class TeacherController
+    internal class Timetable
     {
     }
 }

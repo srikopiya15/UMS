@@ -34,10 +34,9 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_lecture = new System.Windows.Forms.Button();
             this.btn_course = new System.Windows.Forms.Button();
             this.btn_student = new System.Windows.Forms.Button();
-            this.btn_login = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -55,15 +54,14 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Plum;
+            this.panel3.BackColor = System.Drawing.Color.GhostWhite;
             this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.btn_lecture);
             this.panel3.Controls.Add(this.btn_course);
             this.panel3.Controls.Add(this.btn_student);
-            this.panel3.Controls.Add(this.btn_login);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -91,37 +89,49 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(23, 273);
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(28, 246);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(109, 23);
             this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
+            this.button6.Text = "ROOM";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(22, 227);
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(28, 205);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(109, 23);
             this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
+            this.button5.Text = "STAFF";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // btn_lecture
             // 
-            this.button4.Location = new System.Drawing.Point(27, 169);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 26);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_lecture.FlatAppearance.BorderSize = 0;
+            this.btn_lecture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_lecture.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lecture.Location = new System.Drawing.Point(28, 162);
+            this.btn_lecture.Name = "btn_lecture";
+            this.btn_lecture.Size = new System.Drawing.Size(108, 26);
+            this.btn_lecture.TabIndex = 3;
+            this.btn_lecture.Text = "LECTURE";
+            this.btn_lecture.UseVisualStyleBackColor = true;
+            this.btn_lecture.Click += new System.EventHandler(this.btn_lecture_Click);
             // 
             // btn_course
             // 
             this.btn_course.FlatAppearance.BorderSize = 0;
             this.btn_course.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_course.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_course.Location = new System.Drawing.Point(26, 124);
+            this.btn_course.Location = new System.Drawing.Point(27, 124);
             this.btn_course.Name = "btn_course";
             this.btn_course.Size = new System.Drawing.Size(109, 23);
             this.btn_course.TabIndex = 2;
@@ -142,22 +152,9 @@
             this.btn_student.UseVisualStyleBackColor = true;
             this.btn_student.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btn_login
-            // 
-            this.btn_login.FlatAppearance.BorderSize = 0;
-            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_login.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_login.Location = new System.Drawing.Point(26, 42);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(109, 23);
-            this.btn_login.TabIndex = 0;
-            this.btn_login.Text = "LOGIN";
-            this.btn_login.UseVisualStyleBackColor = true;
-            this.btn_login.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Plum;
+            this.panel2.BackColor = System.Drawing.Color.GhostWhite;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(167, 0);
@@ -203,10 +200,9 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_lecture;
         private System.Windows.Forms.Button btn_course;
         private System.Windows.Forms.Button btn_student;
-        private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel4;
     }
