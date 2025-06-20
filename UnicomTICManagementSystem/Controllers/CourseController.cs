@@ -30,7 +30,7 @@ namespace UnicomTICManagementSystem.Controllers
                         {
                             course.Add(new Course
                             {
-                                courseId = reader.GetInt32(0),
+                                courseID = reader.GetInt32(0),
                                 CourseName = reader.GetString(1),
                                 StartDate = reader.GetDateTime(2),
                                 EndDate = reader.GetDateTime(3),
@@ -77,7 +77,7 @@ namespace UnicomTICManagementSystem.Controllers
                     cmd.Parameters.AddWithValue("@name", course.CourseName);
                     cmd.Parameters.AddWithValue("@startdate", course.StartDate);
                     cmd.Parameters.AddWithValue("@enddate", course.EndDate);
-                    cmd.Parameters.AddWithValue("@id", course.courseId);
+                    cmd.Parameters.AddWithValue("@id", course.courseID);
                     await cmd.ExecuteNonQueryAsync();
                 }
             }

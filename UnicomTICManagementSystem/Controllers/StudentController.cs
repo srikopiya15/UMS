@@ -47,7 +47,7 @@ namespace UnicomTICManagementSystem.Controllers
                         {
                             students.Add(new Student
                             {
-                                Id = reader.GetInt32(0),
+                                StudentId = reader.GetInt32(0),
                                 Name = reader.GetString(1),
                                 Address = reader.GetString(2),
                                 Stream = reader.GetString(3)
@@ -73,7 +73,7 @@ namespace UnicomTICManagementSystem.Controllers
                         {
                             return new Student
                             {
-                                Id = reader.GetInt32(0),
+                                StudentId = reader.GetInt32(0),
                                 Name = reader.GetString(1),
                                 Address = reader.GetString(2),
                                 Stream = reader.GetString(3)
@@ -111,7 +111,7 @@ namespace UnicomTICManagementSystem.Controllers
                     cmd.Parameters.AddWithValue("@name", student.Name);
                     cmd.Parameters.AddWithValue("@address", student.Address);
                     cmd.Parameters.AddWithValue("@stream", student.Stream);
-                    cmd.Parameters.AddWithValue("@id", student.Id); 
+                    cmd.Parameters.AddWithValue("@id", student.StudentId); 
                     cmd.ExecuteNonQuery();
                 }
 
@@ -126,7 +126,7 @@ namespace UnicomTICManagementSystem.Controllers
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Id", student.Id);
+                    cmd.Parameters.AddWithValue("@Id", student.StudentId);
                     cmd.ExecuteNonQuery();
                 }
             }

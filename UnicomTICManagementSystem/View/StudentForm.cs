@@ -74,7 +74,7 @@ namespace UnicomTICManagementSystem.Forms
 
             Student student = new Student
             {
-                Id = stu_id, 
+                StudentId = stu_id, 
                 Name = txt_name.Text,
                 Address = txt_address.Text,
                 Stream = comboBox1.Text,
@@ -94,7 +94,7 @@ namespace UnicomTICManagementSystem.Forms
                 var row = DGVstudent.SelectedRows[0];
                 var student = (Student)row.DataBoundItem;
 
-                stu_id=student.Id;
+                stu_id=student.StudentId;
                 txt_name.Text = student.Name;
                 txt_address.Text = student.Address;
                 comboBox1.Text = student.Stream;
@@ -121,7 +121,7 @@ namespace UnicomTICManagementSystem.Forms
             {
                 Student student = new Student
                 {
-                    Id = stu_id
+                    StudentId = stu_id
                 };
 
                 StudentController studentcontroller = new StudentController();

@@ -80,5 +80,17 @@ namespace UnicomTICManagementSystem.View
             RoomForm roomForm = new RoomForm();
             LoadFormInPanel(roomForm);
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SubjectForm subjectForm = new SubjectForm();   
+            LoadFormInPanel(subjectForm);
+        }
+
+        private void btn_exam_Click(object sender, EventArgs e)
+        {
+            ExamForm examForm = new ExamForm();
+            LoadFormInPanel(examForm);
+        }
     }
 }

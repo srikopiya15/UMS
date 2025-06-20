@@ -19,12 +19,12 @@ namespace UnicomTICManagementSystem.View
         public RoomForm()
         {
             InitializeComponent();
-            get_room_info();
+           
         }
-        private void get_room_info() 
+        private async Task get_room_info() 
         {
             dgv_room.DataSource = null;
-            dgv_room.DataSource = roomController.ShowOutput();
+            dgv_room.DataSource = await roomController.ShowOutput();
             dgv_room.ClearSelection();
             ClearInputs();
         }
@@ -63,8 +63,7 @@ namespace UnicomTICManagementSystem.View
         {
             if (dgv_room.SelectedRows.Count > 0)
             {
-                var row = dgv_room.SelectedRows[0];
-                var room = (Room)row.DataBoundItem;
+                var room = (Room)dgv_room.SelectedRows[0].DataBoundItem;
 
                 room_id = room.Id;
                 name_txt.Text = room.Name;
@@ -81,7 +80,7 @@ namespace UnicomTICManagementSystem.View
 
         }
 
-        private void btn_add_Click(object sender, EventArgs e)
+        private async void btn_add_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(name_txt.Text) || string.IsNullOrWhiteSpace(type_combo.Text))
             {
@@ -95,65 +94,44 @@ namespace UnicomTICManagementSystem.View
                 RoomType = type_combo.Text,
                 
             };
-            RoomController roomController = new RoomController(room);
-
-            get_room_info();
+            await roomController.AddRoom(room);
+            await get_room_info();
         }
 
-        private void btn_update_Click(object sender, EventArgs e)
+        private async void btn_update_Click(object sender, EventArgs e)
         {
+            if (room_id == -1)
             {
-                if (dgv_room.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Please select a room to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(name_txt.Text) || string.IsNullOrWhiteSpace(type_combo.Text))
-                {
-                    MessageBox.Show("Please enter the name and roomtype.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                int room_id = Convert.ToInt32(dgv_room.SelectedRows[0].Cells["ID"].Value);
-
-                Room room = new Room
-                {
-                    Id = room_id,
-                    Name = name_txt.Text,
-                    RoomType = type_combo.Text,
-                   
-                };
-
-                RoomController roomController = new RoomController(room);
-                roomController.UpdateRoom(room);
-
-                get_room_info();
+                MessageBox.Show("Please select a room to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            Room room = new Room
+            {
+                Id = room_id,
+                Name = name_txt.Text,
+                RoomType = type_combo.Text,
+            };
+
+            await roomController.UpdateRoom(room);
+            await get_room_info();
+
         }
 
-        private void btn_delete_Click(object sender, EventArgs e)
+        private async void btn_delete_Click(object sender, EventArgs e)
         {
-            if (dgv_room.SelectedRows.Count == 0)
+            if (room_id == -1)
             {
                 MessageBox.Show("Please select a room to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            int room_id = Convert.ToInt32(dgv_room.SelectedRows[0].Cells["ID"].Value);
-
-            DialogResult result = MessageBox.Show("Are you sure want to delete the room?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete the room?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Room room = new Room
-                {
-                    Id = room_id
-                };
-
-                RoomController roomController = new RoomController(room);
-                roomController.DeleteRoom(room);
-
-                get_room_info();
+                Room room = new Room { Id = room_id };
+                await roomController.DeleteRoom(room);
+                await get_room_info();
             }
         }
     }

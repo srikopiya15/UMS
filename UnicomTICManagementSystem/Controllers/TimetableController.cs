@@ -8,5 +8,6 @@ namespace UnicomTICManagementSystem.Controllers
 {
     internal class TimetableController
     {
+
     }
 }

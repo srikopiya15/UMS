@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Threading.Tasks;
 using UnicomTICManagementSystem.Data;
@@ -9,27 +8,13 @@ namespace UnicomTICManagementSystem.Controllers
 {
     internal class RoomController
     {
-       
-        public RoomController()
-        {
-            
-        }
-
-        Room room;
-        public RoomController(Room room)
-        {
-            this.room = room;
-        }
-
         public async Task AddRoom(Room room)
         {
             using (var conn = DbConfic.GetConnection())
             {
-                
-
+               
                 string query = "INSERT INTO Room (Name, RoomType) VALUES (@name, @roomtype);";
-
-                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                using (var cmd = new SQLiteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", room.Name);
                     cmd.Parameters.AddWithValue("@roomtype", room.RoomType);
@@ -44,22 +29,19 @@ namespace UnicomTICManagementSystem.Controllers
 
             using (var conn = DbConfic.GetConnection())
             {
-
+             
                 string query = "SELECT * FROM Room;";
-
-                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                using (var cmd = new SQLiteCommand(query, conn))
+                using (var reader = await cmd.ExecuteReaderAsync())
                 {
-                    using (var reader =  cmd.ExecuteReader())
+                    while (await reader.ReadAsync())
                     {
-                        while ( reader.Read())
+                        rooms.Add(new Room
                         {
-                            rooms.Add(new Room
-                            {
-                                Id = reader.GetInt32(0),
-                                Name = reader.GetString(1),
-                                RoomType = reader.GetString(2),
-                            });
-                        }
+                            Id = reader.GetInt32(0),
+                            Name = reader.GetString(1),
+                            RoomType = reader.GetString(2),
+                        });
                     }
                 }
             }
@@ -71,14 +53,13 @@ namespace UnicomTICManagementSystem.Controllers
         {
             using (var conn = DbConfic.GetConnection())
             {
-                
-
-                using (SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM Room WHERE Id=@id", conn))
+            
+                using (var cmd = new SQLiteCommand("SELECT * FROM Room WHERE Id=@id", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
-                    using (var reader = cmd.ExecuteReader())
+                    using (var reader = await cmd.ExecuteReaderAsync())
                     {
-                        if ( reader.Read())
+                        if (await reader.ReadAsync())
                         {
                             return new Room
                             {
@@ -98,10 +79,9 @@ namespace UnicomTICManagementSystem.Controllers
         {
             using (var conn = DbConfic.GetConnection())
             {
-
+                
                 string query = "UPDATE Room SET Name = @name, RoomType = @roomtype WHERE Id = @id;";
-
-                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                using (var cmd = new SQLiteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", room.Name);
                     cmd.Parameters.AddWithValue("@roomtype", room.RoomType);
@@ -115,16 +95,15 @@ namespace UnicomTICManagementSystem.Controllers
         {
             using (var conn = DbConfic.GetConnection())
             {
-
-                await conn.OpenAsync();
+             
                 string query = "DELETE FROM Room WHERE Id = @id;";
-
-                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                using (var cmd = new SQLiteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@id", room.Id);
-                     cmd.ExecuteNonQuery();
+                    await cmd.ExecuteNonQueryAsync();
                 }
             }
         }
     }
 }
+

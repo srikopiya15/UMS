@@ -72,7 +72,7 @@ namespace UnicomTICManagementSystem.View
             {
                 await courseController.UpdateAsync(new Course
                 {
-                    courseId = course_id,
+                    courseID = course_id,
                     CourseName = course_combo.Text,
                     StartDate = startdate_pick.Value,
                     EndDate = enddate_pick.Value
