@@ -45,9 +45,9 @@ namespace UnicomTICManagementSystem.View
             }
             Staff staff = new Staff
             {
-                Name = name_txt.Text,
-                Address = address_txt.Text,
-                Email = email_txt.Text,
+                StaffName = name_txt.Text,
+                StaffAddress = address_txt.Text,
+                StaffEmail = email_txt.Text,
             };
 
             StaffController staffController = new StaffController(staff);
@@ -74,10 +74,10 @@ namespace UnicomTICManagementSystem.View
 
                 Staff staff = new Staff
                 {
-                    Id = staff_id,
-                    Name = name_txt.Text,
-                    Address = address_txt.Text,
-                    Email = email_txt.Text,
+                    StaffId = staff_id,
+                    StaffName = name_txt.Text,
+                    StaffAddress = address_txt.Text,
+                    StaffEmail = email_txt.Text,
                 };
 
                 StaffController staffController = new StaffController(staff);
@@ -102,7 +102,7 @@ namespace UnicomTICManagementSystem.View
             {
                 Staff staff = new Staff
                 {
-                    Id = staff_id
+                    StaffId = staff_id
                 };
 
                 StaffController staffController = new StaffController(staff);
@@ -119,10 +119,10 @@ namespace UnicomTICManagementSystem.View
                 var row = dgv_staff.SelectedRows[0];
                 var staff = (Staff)row.DataBoundItem;
 
-                staff_id= staff.Id;
-                name_txt.Text = staff.Name;
-                address_txt.Text = staff.Address;
-                email_txt.Text = staff.Email;
+                staff_id= staff.StaffId;
+                name_txt.Text = staff.StaffName;
+                address_txt.Text = staff.StaffAddress;
+                email_txt.Text = staff.StaffEmail;
             }
             else
             {

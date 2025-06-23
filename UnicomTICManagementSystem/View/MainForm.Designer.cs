@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_mark = new System.Windows.Forms.Button();
             this.btn_exam = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -39,9 +41,6 @@
             this.btn_student = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_mark = new System.Windows.Forms.Button();
-            this.btn_session = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +58,6 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.GhostWhite;
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.btn_session);
             this.panel3.Controls.Add(this.btn_mark);
             this.panel3.Controls.Add(this.btn_exam);
             this.panel3.Controls.Add(this.button7);
@@ -74,6 +72,32 @@
             this.panel3.Size = new System.Drawing.Size(167, 450);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(13, 321);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "TIMETABLE";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btn_mark
+            // 
+            this.btn_mark.FlatAppearance.BorderSize = 0;
+            this.btn_mark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_mark.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mark.Location = new System.Drawing.Point(24, 292);
+            this.btn_mark.Name = "btn_mark";
+            this.btn_mark.Size = new System.Drawing.Size(75, 23);
+            this.btn_mark.TabIndex = 8;
+            this.btn_mark.Text = "MARK";
+            this.btn_mark.UseVisualStyleBackColor = true;
+            this.btn_mark.Click += new System.EventHandler(this.btn_mark_Click);
             // 
             // btn_exam
             // 
@@ -188,42 +212,6 @@
             this.panel4.TabIndex = 2;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // btn_mark
-            // 
-            this.btn_mark.FlatAppearance.BorderSize = 0;
-            this.btn_mark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mark.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mark.Location = new System.Drawing.Point(24, 292);
-            this.btn_mark.Name = "btn_mark";
-            this.btn_mark.Size = new System.Drawing.Size(75, 23);
-            this.btn_mark.TabIndex = 8;
-            this.btn_mark.Text = "MARK";
-            this.btn_mark.UseVisualStyleBackColor = true;
-            // 
-            // btn_session
-            // 
-            this.btn_session.FlatAppearance.BorderSize = 0;
-            this.btn_session.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_session.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_session.Location = new System.Drawing.Point(24, 321);
-            this.btn_session.Name = "btn_session";
-            this.btn_session.Size = new System.Drawing.Size(90, 23);
-            this.btn_session.TabIndex = 9;
-            this.btn_session.Text = "SESSION";
-            this.btn_session.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(21, 350);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "TIMETABLE";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,7 +243,6 @@
         private System.Windows.Forms.Button btn_student;
         private System.Windows.Forms.Button btn_exam;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btn_session;
         private System.Windows.Forms.Button btn_mark;
         private System.Windows.Forms.Button button1;
     }

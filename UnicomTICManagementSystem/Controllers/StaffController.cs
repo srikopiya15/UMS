@@ -19,9 +19,9 @@ namespace UnicomTICManagementSystem.Controllers
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", staff.Name);
-                    cmd.Parameters.AddWithValue("@address", staff.Address);
-                    cmd.Parameters.AddWithValue("@email", staff.Email);
+                    cmd.Parameters.AddWithValue("@name", staff.StaffName);
+                    cmd.Parameters.AddWithValue("@address", staff.StaffAddress);
+                    cmd.Parameters.AddWithValue("@email", staff.StaffEmail);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -48,10 +48,10 @@ namespace UnicomTICManagementSystem.Controllers
                         {
                             staff.Add(new Staff
                             {
-                                Id = reader.GetInt32(0),
-                                Name = reader.GetString(1),
-                                Address = reader.GetString(2),
-                                Email = reader.GetString(3)
+                                StaffId = reader.GetInt32(0),
+                                StaffName = reader.GetString(1),
+                                StaffAddress = reader.GetString(2),
+                                StaffEmail = reader.GetString(3)
                             });
 
                         }
@@ -74,10 +74,10 @@ namespace UnicomTICManagementSystem.Controllers
                         {
                             return new Staff
                             {
-                                Id = reader.GetInt32(0),
-                                Name = reader.GetString(1),
-                                Address = reader.GetString(2),
-                                Email = reader.GetString(3)
+                                StaffId = reader.GetInt32(0),
+                                StaffName = reader.GetString(1),
+                                StaffAddress = reader.GetString(2),
+                                StaffEmail = reader.GetString(3)
                             };
                         }
                     }
@@ -94,9 +94,9 @@ namespace UnicomTICManagementSystem.Controllers
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", staff.Name);
-                    cmd.Parameters.AddWithValue("@address", staff.Address);
-                    cmd.Parameters.AddWithValue("@email", staff.Email);
+                    cmd.Parameters.AddWithValue("@name", staff.StaffName);
+                    cmd.Parameters.AddWithValue("@address", staff.StaffAddress);
+                    cmd.Parameters.AddWithValue("@email", staff.StaffEmail);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -109,10 +109,10 @@ namespace UnicomTICManagementSystem.Controllers
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", staff.Name);
-                    cmd.Parameters.AddWithValue("@address", staff.Address);
-                    cmd.Parameters.AddWithValue("@email", staff.Email);
-                    cmd.Parameters.AddWithValue("@id", staff.Id);
+                    cmd.Parameters.AddWithValue("@name", staff.StaffName);
+                    cmd.Parameters.AddWithValue("@address", staff.StaffAddress);
+                    cmd.Parameters.AddWithValue("@email", staff.StaffEmail);
+                    cmd.Parameters.AddWithValue("@id", staff.StaffId);
                     cmd.ExecuteNonQuery();
                 }
 
@@ -127,7 +127,7 @@ namespace UnicomTICManagementSystem.Controllers
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id", staff.Id);
+                    cmd.Parameters.AddWithValue("@id", staff.StaffId);
                     cmd.ExecuteNonQuery();
                 }
             }

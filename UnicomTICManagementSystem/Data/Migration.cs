@@ -15,6 +15,7 @@ namespace UnicomTICManagementSystem.Data
                 string dropQuery = @"
                     DROP TABLE IF EXISTS Room;
                     DROP TABLE IF EXISTS Subject;
+                    DROP TABLE IF EXISTS Timetable;
                 ";
 
                 using (var dropCmd = new SQLiteCommand(dropQuery, conn))
@@ -41,7 +42,10 @@ namespace UnicomTICManagementSystem.Data
                     CREATE TABLE IF NOT EXISTS Timetable (
                         ID INTEGER PRIMARY KEY AUTOINCREMENT,
                         TimeSlot TEXT,
-                        SubjectName TEXT NOT NULL
+                        SubjectID INTEGER,
+                        RoomID INTEGER,
+                        FOREIGN KEY (SubjectID) REFERENCES Subject(ID),
+                        FOREIGN KEY (RoomID) REFERENCES Room(ID)
                     );
 
                     CREATE TABLE IF NOT EXISTS Course (

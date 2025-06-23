@@ -65,8 +65,8 @@ namespace UnicomTICManagementSystem.View
             {
                 var room = (Room)dgv_room.SelectedRows[0].DataBoundItem;
 
-                room_id = room.Id;
-                name_txt.Text = room.Name;
+                room_id = room.RoomId;
+                name_txt.Text = room.RoomName;
                 type_combo.Text = room.RoomType;
             }
             else
@@ -90,7 +90,7 @@ namespace UnicomTICManagementSystem.View
             }
             Room room = new Room
             {
-                Name = name_txt.Text,
+                RoomName = name_txt.Text,
                 RoomType = type_combo.Text,
                 
             };
@@ -108,8 +108,8 @@ namespace UnicomTICManagementSystem.View
 
             Room room = new Room
             {
-                Id = room_id,
-                Name = name_txt.Text,
+                RoomId = room_id,
+                RoomName = name_txt.Text,
                 RoomType = type_combo.Text,
             };
 
@@ -129,7 +129,7 @@ namespace UnicomTICManagementSystem.View
             DialogResult result = MessageBox.Show("Are you sure you want to delete the room?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Room room = new Room { Id = room_id };
+                Room room = new Room { RoomId = room_id };
                 await roomController.DeleteRoom(room);
                 await get_room_info();
             }

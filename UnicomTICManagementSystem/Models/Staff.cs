@@ -8,10 +8,10 @@ namespace UnicomTICManagementSystem.Models
 {
     internal class Staff
     {
-        public int Id { get; set; } 
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string Email { get; set; }
+        public int StaffId { get; set; } 
+        public string StaffName { get; set; }
+        public string StaffAddress { get; set; }
+        public string StaffEmail { get; set; }
        
     }
 }

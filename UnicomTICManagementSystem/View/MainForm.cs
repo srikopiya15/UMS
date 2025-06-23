@@ -92,5 +92,17 @@ namespace UnicomTICManagementSystem.View
             ExamForm examForm = new ExamForm();
             LoadFormInPanel(examForm);
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            TimetableForm timetableForm = new TimetableForm();
+            LoadFormInPanel(timetableForm);
+        }
+
+        private void btn_mark_Click(object sender, EventArgs e)
+        {
+            MarkForm markForm = new MarkForm();
+            LoadFormInPanel(markForm);
+        }
     }
 }

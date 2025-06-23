@@ -16,7 +16,7 @@ namespace UnicomTICManagementSystem.Controllers
                 string query = "INSERT INTO Room (Name, RoomType) VALUES (@name, @roomtype);";
                 using (var cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", room.Name);
+                    cmd.Parameters.AddWithValue("@name", room.RoomName);
                     cmd.Parameters.AddWithValue("@roomtype", room.RoomType);
                     await cmd.ExecuteNonQueryAsync();
                 }
@@ -38,8 +38,8 @@ namespace UnicomTICManagementSystem.Controllers
                     {
                         rooms.Add(new Room
                         {
-                            Id = reader.GetInt32(0),
-                            Name = reader.GetString(1),
+                            RoomId = reader.GetInt32(0),
+                            RoomName = reader.GetString(1),
                             RoomType = reader.GetString(2),
                         });
                     }
@@ -63,8 +63,8 @@ namespace UnicomTICManagementSystem.Controllers
                         {
                             return new Room
                             {
-                                Id = reader.GetInt32(0),
-                                Name = reader.GetString(1),
+                                RoomId = reader.GetInt32(0),
+                                RoomName = reader.GetString(1),
                                 RoomType = reader.GetString(2),
                             };
                         }
@@ -83,9 +83,9 @@ namespace UnicomTICManagementSystem.Controllers
                 string query = "UPDATE Room SET Name = @name, RoomType = @roomtype WHERE Id = @id;";
                 using (var cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", room.Name);
+                    cmd.Parameters.AddWithValue("@name", room.RoomName);
                     cmd.Parameters.AddWithValue("@roomtype", room.RoomType);
-                    cmd.Parameters.AddWithValue("@id", room.Id);
+                    cmd.Parameters.AddWithValue("@id", room.RoomId);
                     await cmd.ExecuteNonQueryAsync();
                 }
             }
@@ -99,7 +99,7 @@ namespace UnicomTICManagementSystem.Controllers
                 string query = "DELETE FROM Room WHERE Id = @id;";
                 using (var cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id", room.Id);
+                    cmd.Parameters.AddWithValue("@id", room.RoomId);
                     await cmd.ExecuteNonQueryAsync();
                 }
             }

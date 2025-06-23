@@ -156,6 +156,9 @@
     <EmbeddedResource Include="View\LectureForm.resx">
       <DependentUpon>LectureForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\MarkForm.resx">
+      <DependentUpon>MarkForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\RoomForm.resx">
       <DependentUpon>RoomForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SubjectForm.resx">
       <DependentUpon>SubjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TimetableForm.resx">
+      <DependentUpon>TimetableForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

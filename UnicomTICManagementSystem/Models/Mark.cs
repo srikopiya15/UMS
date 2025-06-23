@@ -9,7 +9,7 @@ namespace UnicomTICManagementSystem.Models
     internal class Mark
     {
         public int StudentId { get; set; }
-        public string SubjectID { get; set; } 
+        public int SubjectId { get; set; } 
         public string Examtype { get; set; }
         public int MarkObtained { get; set; }
        

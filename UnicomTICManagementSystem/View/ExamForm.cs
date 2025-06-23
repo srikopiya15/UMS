@@ -61,8 +61,8 @@ namespace UnicomTICManagementSystem.View
 
             Exam exam = new Exam
             {
-                Id = ex_id,
-                Name = name_txt.Text,
+                ExamId = ex_id,
+                ExamName = name_txt.Text,
                 SubjectId = subject_combo.Text,
             };
 
@@ -75,8 +75,8 @@ namespace UnicomTICManagementSystem.View
             if (dgv_exam.SelectedRows.Count > 0)
             {
                 var exam = (Exam)dgv_exam.SelectedRows[0].DataBoundItem;
-                ex_id = exam.Id;
-                name_txt.Text = exam.Name;
+                ex_id = exam.ExamId;
+                name_txt.Text = exam.ExamName;
                 subject_combo.SelectedValue = exam.SubjectId;
             }
         }
@@ -91,7 +91,7 @@ namespace UnicomTICManagementSystem.View
 
             Exam exam = new Exam
             {
-                Name = name_txt.Text,
+                ExamName = name_txt.Text,
                 SubjectId = subject_combo.Text,
             };
 

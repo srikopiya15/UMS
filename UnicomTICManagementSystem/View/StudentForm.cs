@@ -47,9 +47,9 @@ namespace UnicomTICManagementSystem.Forms
            }
            Student student = new Student
             {
-                Name = txt_name.Text,
-                Address = txt_address.Text,
-                Stream = comboBox1.Text,
+               StudentName = txt_name.Text,
+               StudentAddress = txt_address.Text,
+               StudentStream = comboBox1.Text,
             };
             StudentController studentcontroller=new StudentController(student);
 
@@ -70,14 +70,14 @@ namespace UnicomTICManagementSystem.Forms
                 return;
             }
     
-            int stu_id = Convert.ToInt32(DGVstudent.SelectedRows[0].Cells["ID"].Value);
+            int stu_id = Convert.ToInt32(DGVstudent.SelectedRows[0].Cells["StudentID"].Value);
 
             Student student = new Student
             {
-                StudentId = stu_id, 
-                Name = txt_name.Text,
-                Address = txt_address.Text,
-                Stream = comboBox1.Text,
+                StudentId = stu_id,
+                StudentName = txt_name.Text,
+                StudentAddress = txt_address.Text,
+                StudentStream = comboBox1.Text,
             };
 
             StudentController studentcontroller = new StudentController();
@@ -95,9 +95,9 @@ namespace UnicomTICManagementSystem.Forms
                 var student = (Student)row.DataBoundItem;
 
                 stu_id=student.StudentId;
-                txt_name.Text = student.Name;
-                txt_address.Text = student.Address;
-                comboBox1.Text = student.Stream;
+                txt_name.Text = student.StudentName;
+                txt_address.Text = student.StudentAddress;
+                comboBox1.Text = student.StudentStream;
             }
             else 
             {  
@@ -114,7 +114,7 @@ namespace UnicomTICManagementSystem.Forms
                 return;
             }
 
-            int stu_id = Convert.ToInt32(DGVstudent.SelectedRows[0].Cells["ID"].Value);
+            int stu_id = Convert.ToInt32(DGVstudent.SelectedRows[0].Cells["StudentID"].Value);
 
             DialogResult result = MessageBox.Show("Are you sure want to delete the student?","Confirm",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes) 

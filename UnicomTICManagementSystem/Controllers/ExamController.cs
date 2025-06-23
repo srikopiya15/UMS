@@ -26,8 +26,8 @@ namespace UnicomTICManagementSystem.Controllers
                     {
                         exam.Add(new Exam
                         {
-                            Id = reader.GetInt32(0),
-                            Name = reader.GetString(1),
+                            ExamId = reader.GetInt32(0),
+                            ExamName = reader.GetString(1),
                             SubjectId = reader.GetString(2),
                         });
                     }
@@ -53,8 +53,8 @@ namespace UnicomTICManagementSystem.Controllers
                         {
                             return new Exam
                             {
-                                Id = reader.GetInt32(0),
-                                Name = reader.GetString(1),
+                                ExamId = reader.GetInt32(0),
+                                ExamName = reader.GetString(1),
                                 SubjectId = reader.GetString(2),
                             };
                         }
@@ -73,7 +73,7 @@ namespace UnicomTICManagementSystem.Controllers
                 string query = "INSERT INTO Exam (Name, SubjectID) VALUES (@name, @subjectid);";
                 using (var cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", exam.Name);
+                    cmd.Parameters.AddWithValue("@name", exam.ExamName);
                     cmd.Parameters.AddWithValue("@subjectid", exam.SubjectId);
                     cmd.ExecuteNonQuery();
                 }
@@ -88,9 +88,9 @@ namespace UnicomTICManagementSystem.Controllers
                 string query = "UPDATE Exam SET Name = @name, SubjectID = @subjectId WHERE ID = @id;";
                 using (var cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", exam.Name);
+                    cmd.Parameters.AddWithValue("@name", exam.ExamName);
                     cmd.Parameters.AddWithValue("@subjectId", exam.SubjectId);
-                    cmd.Parameters.AddWithValue("@id", exam.Id);
+                    cmd.Parameters.AddWithValue("@id", exam.ExamId);
                     cmd.ExecuteNonQuery();
                 }
             }
