@@ -30,12 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_timetable = new System.Windows.Forms.Button();
             this.btn_mark = new System.Windows.Forms.Button();
             this.btn_exam = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_subject = new System.Windows.Forms.Button();
+            this.btn_room = new System.Windows.Forms.Button();
+            this.btn_staff = new System.Windows.Forms.Button();
             this.btn_lecture = new System.Windows.Forms.Button();
             this.btn_course = new System.Windows.Forms.Button();
             this.btn_student = new System.Windows.Forms.Button();
@@ -57,12 +57,12 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btn_timetable);
             this.panel3.Controls.Add(this.btn_mark);
             this.panel3.Controls.Add(this.btn_exam);
-            this.panel3.Controls.Add(this.button7);
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.btn_subject);
+            this.panel3.Controls.Add(this.btn_room);
+            this.panel3.Controls.Add(this.btn_staff);
             this.panel3.Controls.Add(this.btn_lecture);
             this.panel3.Controls.Add(this.btn_course);
             this.panel3.Controls.Add(this.btn_student);
@@ -73,18 +73,18 @@
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // button1
+            // btn_timetable
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(13, 321);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "TIMETABLE";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btn_timetable.FlatAppearance.BorderSize = 0;
+            this.btn_timetable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_timetable.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_timetable.Location = new System.Drawing.Point(13, 321);
+            this.btn_timetable.Name = "btn_timetable";
+            this.btn_timetable.Size = new System.Drawing.Size(116, 23);
+            this.btn_timetable.TabIndex = 10;
+            this.btn_timetable.Text = "TIMETABLE";
+            this.btn_timetable.UseVisualStyleBackColor = true;
+            this.btn_timetable.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btn_mark
             // 
@@ -112,44 +112,44 @@
             this.btn_exam.UseVisualStyleBackColor = true;
             this.btn_exam.Click += new System.EventHandler(this.btn_exam_Click);
             // 
-            // button7
+            // btn_subject
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(13, 231);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(108, 26);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "SUBJECT";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btn_subject.FlatAppearance.BorderSize = 0;
+            this.btn_subject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_subject.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_subject.Location = new System.Drawing.Point(13, 231);
+            this.btn_subject.Name = "btn_subject";
+            this.btn_subject.Size = new System.Drawing.Size(108, 26);
+            this.btn_subject.TabIndex = 6;
+            this.btn_subject.Text = "SUBJECT";
+            this.btn_subject.UseVisualStyleBackColor = true;
+            this.btn_subject.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button6
+            // btn_room
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(5, 202);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(109, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "ROOM";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btn_room.FlatAppearance.BorderSize = 0;
+            this.btn_room.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_room.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_room.Location = new System.Drawing.Point(5, 202);
+            this.btn_room.Name = "btn_room";
+            this.btn_room.Size = new System.Drawing.Size(109, 23);
+            this.btn_room.TabIndex = 5;
+            this.btn_room.Text = "ROOM";
+            this.btn_room.UseVisualStyleBackColor = true;
+            this.btn_room.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
+            // btn_staff
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(3, 173);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(109, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "STAFF";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_staff.FlatAppearance.BorderSize = 0;
+            this.btn_staff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_staff.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_staff.Location = new System.Drawing.Point(3, 173);
+            this.btn_staff.Name = "btn_staff";
+            this.btn_staff.Size = new System.Drawing.Size(109, 23);
+            this.btn_staff.TabIndex = 4;
+            this.btn_staff.Text = "STAFF";
+            this.btn_staff.UseVisualStyleBackColor = true;
+            this.btn_staff.Click += new System.EventHandler(this.button5_Click);
             // 
             // btn_lecture
             // 
@@ -235,15 +235,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_subject;
+        private System.Windows.Forms.Button btn_room;
+        private System.Windows.Forms.Button btn_staff;
         private System.Windows.Forms.Button btn_lecture;
         private System.Windows.Forms.Button btn_course;
         private System.Windows.Forms.Button btn_student;
         private System.Windows.Forms.Button btn_exam;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_mark;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_timetable;
     }
 }

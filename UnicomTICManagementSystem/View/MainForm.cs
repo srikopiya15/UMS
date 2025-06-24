@@ -13,11 +13,13 @@ namespace UnicomTICManagementSystem.View
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private string userRole;
+        public MainForm(string role) 
         {
             InitializeComponent();
+           
+           
         }
-
         private void LoadFormInPanel(Form childForm)
         {
             panel4.Controls.Clear();               
@@ -42,7 +44,7 @@ namespace UnicomTICManagementSystem.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-          StudentForm studentForm = new StudentForm();
+          StudentForm studentForm = new StudentForm(userRole);
           LoadFormInPanel(studentForm);
 
         }
@@ -59,49 +61,49 @@ namespace UnicomTICManagementSystem.View
 
         private void btn_course_Click(object sender, EventArgs e)
         {
-            CourseForm courseForm = new CourseForm();
+            CourseForm courseForm = new CourseForm(userRole);
             LoadFormInPanel(courseForm);
         }
 
         private void btn_lecture_Click(object sender, EventArgs e)
         {
-            LectureForm lectureForm = new LectureForm();
+            LectureForm lectureForm = new LectureForm(userRole);
             LoadFormInPanel(lectureForm);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            StaffForm  staffForm = new StaffForm();
+            StaffForm  staffForm = new StaffForm(userRole);
             LoadFormInPanel(staffForm);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            RoomForm roomForm = new RoomForm();
+            RoomForm roomForm = new RoomForm(userRole);
             LoadFormInPanel(roomForm);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            SubjectForm subjectForm = new SubjectForm();   
+            SubjectForm subjectForm = new SubjectForm(userRole);   
             LoadFormInPanel(subjectForm);
         }
 
         private void btn_exam_Click(object sender, EventArgs e)
         {
-            ExamForm examForm = new ExamForm();
+            ExamForm examForm = new ExamForm(userRole);
             LoadFormInPanel(examForm);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            TimetableForm timetableForm = new TimetableForm();
+            TimetableForm timetableForm = new TimetableForm(userRole);
             LoadFormInPanel(timetableForm);
         }
 
         private void btn_mark_Click(object sender, EventArgs e)
         {
-            MarkForm markForm = new MarkForm();
+            MarkForm markForm = new MarkForm(userRole);
             LoadFormInPanel(markForm);
         }
     }

@@ -16,10 +16,23 @@ namespace UnicomTICManagementSystem.View
     {
         StaffController staffController=new StaffController();
         private int staff_id = -1;
-        public StaffForm()
+        private string userRole;
+        public StaffForm(string role)
         {
             InitializeComponent();
+            userRole = role;
+            ApplyPermission();
             get_staff_info();
+        }
+        private void ApplyPermission()
+        {
+
+            if (userRole != "Admin")
+            {
+                btn_add.Visible = false;
+                btn_delete.Visible = false;
+                btn_update.Visible = false;
+            }
         }
         private void get_staff_info() 
         {

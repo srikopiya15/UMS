@@ -18,11 +18,23 @@ namespace UnicomTICManagementSystem.Forms
     {
         private StudentController studentController = new StudentController();
         private int stu_id=-1;
-        public StudentForm()
+        private string userRole;
+        public StudentForm(string role)
         {
             InitializeComponent();
+            userRole = role;
+            ApplyPermission();
             get_student_info();
         } 
+        private void ApplyPermission() 
+        { 
+            if (userRole != "Admin") 
+            { 
+                button_add.Visible = false;
+                button_delete .Visible = false;
+                button_update .Visible = false;
+            }
+        }
         private void get_student_info() 
         {
             DGVstudent.DataSource = null;
@@ -70,7 +82,7 @@ namespace UnicomTICManagementSystem.Forms
                 return;
             }
     
-            int stu_id = Convert.ToInt32(DGVstudent.SelectedRows[0].Cells["StudentID"].Value);
+            int stu_id = Convert.ToInt32(DGVstudent.SelectedRows[0].Cells["ID"].Value);
 
             Student student = new Student
             {
@@ -114,7 +126,7 @@ namespace UnicomTICManagementSystem.Forms
                 return;
             }
 
-            int stu_id = Convert.ToInt32(DGVstudent.SelectedRows[0].Cells["StudentID"].Value);
+            int stu_id = Convert.ToInt32(DGVstudent.SelectedRows[0].Cells["ID"].Value);
 
             DialogResult result = MessageBox.Show("Are you sure want to delete the student?","Confirm",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes) 

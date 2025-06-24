@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Windows.Forms;
 using UnicomTICManagementSystem.Data;
 using UnicomTICManagementSystem.Models;
 
@@ -7,10 +8,7 @@ namespace UnicomTICManagementSystem.Controllers
 {
     internal class LectureController
     {
-        public LectureController()
-        { 
-
-        }
+       
         public LectureController(Lecture lecture)
         {
             using (var conn = DbConfic.GetConnection())
@@ -26,6 +24,10 @@ namespace UnicomTICManagementSystem.Controllers
                 }
             }
         }
+        public LectureController()
+        {
+
+        } 
 
         public List<Lecture> ShowOutput()
         {
@@ -44,9 +46,9 @@ namespace UnicomTICManagementSystem.Controllers
                         lectures.Add(new Lecture
                         {
                             LecturerId = reader.GetInt32(0),
-                            LecturerName = reader.IsDBNull(1) ? null : reader.GetString(1),
-                            LecturerAddress = reader.IsDBNull(2) ? null : reader.GetString(2),
-                            LecturerEmail = reader.IsDBNull(3) ? null : reader.GetString(3),
+                            LecturerName = reader.GetString(1),
+                            LecturerAddress = reader.GetString(2),
+                            LecturerEmail = reader.GetString(3),
                         });
                     }
                 }
@@ -55,15 +57,13 @@ namespace UnicomTICManagementSystem.Controllers
             return lectures;
         }
 
-        public Lecture GetLectureById(int id)
+        public Lecture GetLectureById(int Id)
         {
             using (var conn = DbConfic.GetConnection())
             {
-                
-
                 using (SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM Lecturer WHERE ID = @id", conn))
                 {
-                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@id", Id);
 
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -72,9 +72,9 @@ namespace UnicomTICManagementSystem.Controllers
                             return new Lecture
                             {
                                 LecturerId = reader.GetInt32(0),
-                                LecturerName = reader.IsDBNull(1) ? null : reader.GetString(1),
-                                LecturerAddress = reader.IsDBNull(2) ? null : reader.GetString(2),
-                                LecturerEmail = reader.IsDBNull(3) ? null : reader.GetString(3),
+                                LecturerName = reader.GetString(1),
+                                LecturerAddress = reader.GetString(2),
+                                LecturerEmail = reader.GetString(3),
                             };
                         }
                     }
@@ -118,17 +118,15 @@ namespace UnicomTICManagementSystem.Controllers
             }
         }
 
-        public void DeleteLecture(int id)
+        public void DeleteLecture(Lecture lecture)
         {
             using (var conn = DbConfic.GetConnection())
             {
-             
-
                 string query = "DELETE FROM Lecturer WHERE ID = @id;";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@id",lecture. LecturerId);
                     cmd.ExecuteNonQuery();
                 }
             }

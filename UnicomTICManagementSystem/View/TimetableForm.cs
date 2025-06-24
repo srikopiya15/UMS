@@ -17,10 +17,23 @@ namespace UnicomTICManagementSystem.View
     {
         private TimetableController timetablecontroller = new TimetableController();
         private int table_id = -1;
-        public TimetableForm()
+        private string userRole;
+        public TimetableForm(string role)
         {
             InitializeComponent();
+            userRole = role;
+            ApplyPermission();
             get_table_info();
+        }
+        private void ApplyPermission()
+        {
+
+            if (userRole != "Admin")
+            {
+                btn_add.Visible = false;
+                btn_delete.Visible = false;
+                btn_update.Visible = false;
+            }
         }
         private void get_table_info() 
         {

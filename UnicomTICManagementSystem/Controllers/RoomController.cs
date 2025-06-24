@@ -8,7 +8,7 @@ namespace UnicomTICManagementSystem.Controllers
 {
     internal class RoomController
     {
-        public async Task AddRoom(Room room)
+        public void AddRoom(Room room)
         {
             using (var conn = DbConfic.GetConnection())
             {
@@ -18,25 +18,25 @@ namespace UnicomTICManagementSystem.Controllers
                 {
                     cmd.Parameters.AddWithValue("@name", room.RoomName);
                     cmd.Parameters.AddWithValue("@roomtype", room.RoomType);
-                    await cmd.ExecuteNonQueryAsync();
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
 
-        public async Task<List<Room>> ShowOutput()
+        public  List<Room> ShowOutput()
         {
-            var rooms = new List<Room>();
+            List<Room> rooms = new List<Room>();
 
             using (var conn = DbConfic.GetConnection())
             {
              
                 string query = "SELECT * FROM Room;";
                 using (var cmd = new SQLiteCommand(query, conn))
-                using (var reader = await cmd.ExecuteReaderAsync())
+                using (var reader =cmd.ExecuteReader())
                 {
-                    while (await reader.ReadAsync())
+                    while ( reader.Read())
                     {
-                        rooms.Add(new Room
+                        rooms.Add (new Room
                         {
                             RoomId = reader.GetInt32(0),
                             RoomName = reader.GetString(1),
@@ -49,7 +49,7 @@ namespace UnicomTICManagementSystem.Controllers
             return rooms;
         }
 
-        public async Task<Room> GetRoomById(int id)
+        public Room GetRoomById(int id)
         {
             using (var conn = DbConfic.GetConnection())
             {
@@ -57,9 +57,9 @@ namespace UnicomTICManagementSystem.Controllers
                 using (var cmd = new SQLiteCommand("SELECT * FROM Room WHERE Id=@id", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
-                    using (var reader = await cmd.ExecuteReaderAsync())
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        if (await reader.ReadAsync())
+                        if (reader.Read())
                         {
                             return new Room
                             {
@@ -75,7 +75,7 @@ namespace UnicomTICManagementSystem.Controllers
             return null;
         }
 
-        public async Task UpdateRoom(Room room)
+        public void UpdateRoom(Room room)
         {
             using (var conn = DbConfic.GetConnection())
             {
@@ -86,12 +86,12 @@ namespace UnicomTICManagementSystem.Controllers
                     cmd.Parameters.AddWithValue("@name", room.RoomName);
                     cmd.Parameters.AddWithValue("@roomtype", room.RoomType);
                     cmd.Parameters.AddWithValue("@id", room.RoomId);
-                    await cmd.ExecuteNonQueryAsync();
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
 
-        public async Task DeleteRoom(Room room)
+        public void DeleteRoom(Room room)
         {
             using (var conn = DbConfic.GetConnection())
             {
@@ -100,7 +100,7 @@ namespace UnicomTICManagementSystem.Controllers
                 using (var cmd = new SQLiteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@id", room.RoomId);
-                    await cmd.ExecuteNonQueryAsync();
+                    cmd.ExecuteNonQuery();
                 }
             }
         }

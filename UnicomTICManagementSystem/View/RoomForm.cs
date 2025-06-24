@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UnicomTICManagementSystem.Controllers;
 using UnicomTICManagementSystem.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UnicomTICManagementSystem.View
 {
@@ -16,15 +17,31 @@ namespace UnicomTICManagementSystem.View
     {
         private RoomController roomController=new RoomController();
         private int  room_id=-1;
-        public RoomForm()
+        private string userRole;
+        public RoomForm(string role)
         {
             InitializeComponent();
-           
+            userRole = role;
+            ApplyPermission();
+            get_room_info();
+
         }
-        private async Task get_room_info() 
+             private void ApplyPermission()
+             { 
+        
+                    if (userRole != "Admin")
+                    {
+                        btn_add.Visible = false;
+                        btn_delete.Visible = false;
+                        btn_update.Visible = false;
+                    }
+             }
+           
+        
+        private void get_room_info() 
         {
             dgv_room.DataSource = null;
-            dgv_room.DataSource = await roomController.ShowOutput();
+            dgv_room.DataSource = roomController.ShowOutput();
             dgv_room.ClearSelection();
             ClearInputs();
         }
@@ -63,7 +80,9 @@ namespace UnicomTICManagementSystem.View
         {
             if (dgv_room.SelectedRows.Count > 0)
             {
-                var room = (Room)dgv_room.SelectedRows[0].DataBoundItem;
+                var row = dgv_room.SelectedRows[0];
+                var room = (Room)row.DataBoundItem;
+
 
                 room_id = room.RoomId;
                 name_txt.Text = room.RoomName;
@@ -80,7 +99,7 @@ namespace UnicomTICManagementSystem.View
 
         }
 
-        private async void btn_add_Click(object sender, EventArgs e)
+        private  void btn_add_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(name_txt.Text) || string.IsNullOrWhiteSpace(type_combo.Text))
             {
@@ -94,17 +113,25 @@ namespace UnicomTICManagementSystem.View
                 RoomType = type_combo.Text,
                 
             };
-            await roomController.AddRoom(room);
-            await get_room_info();
+            RoomController roomController = new RoomController();
+            get_room_info();
         }
 
-        private async void btn_update_Click(object sender, EventArgs e)
+        private  void btn_update_Click(object sender, EventArgs e)
         {
-            if (room_id == -1)
+            if (dgv_room.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select a room to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            if (string.IsNullOrWhiteSpace(name_txt.Text) || string.IsNullOrWhiteSpace(type_combo.Text))
+            {
+                MessageBox.Show("Please enter the room name and type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int room_id = Convert.ToInt32(dgv_room.SelectedRows[0].Cells["ID"].Value);
 
             Room room = new Room
             {
@@ -113,25 +140,33 @@ namespace UnicomTICManagementSystem.View
                 RoomType = type_combo.Text,
             };
 
-            await roomController.UpdateRoom(room);
-            await get_room_info();
+            RoomController roomController = new RoomController();
+            roomController.UpdateRoom(room);
 
+            get_room_info();
         }
 
-        private async void btn_delete_Click(object sender, EventArgs e)
+        private void btn_delete_Click(object sender, EventArgs e)
         {
-            if (room_id == -1)
+            if (dgv_room.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select a room to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Are you sure you want to delete the room?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            int room_id = Convert.ToInt32(dgv_room.SelectedRows[0].Cells["ID"].Value);
+
+            DialogResult result = MessageBox.Show("Are you sure want to delete the room?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Room room = new Room { RoomId = room_id };
-                await roomController.DeleteRoom(room);
-                await get_room_info();
+                Room room = new Room
+                {
+                    RoomId = room_id,
+                };
+                RoomController roomController = new RoomController();
+                roomController.UpdateRoom(room);
+
+                get_room_info();
             }
         }
     }

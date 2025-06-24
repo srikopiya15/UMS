@@ -16,10 +16,24 @@ namespace UnicomTICManagementSystem.View
     {
         private CourseController courseController =new CourseController();
         private int course_id = -1;
-        public CourseForm()
+        private string userRole;
+        public CourseForm(string role)
         {
             InitializeComponent();
+            userRole = role;
+            ApplyPermission();
             this.Load += CourseForm_Load;
+            
+        }
+        private void ApplyPermission()
+        {
+
+            if (userRole != "Admin")
+            {
+                add_btn.Visible = false;
+                delete_btn.Visible = false;
+                update_btn.Visible = false;
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

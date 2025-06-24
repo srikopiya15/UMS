@@ -61,7 +61,7 @@ namespace UnicomTICManagementSystem.View
                 MessageBox.Show($"Login successful as {role}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 
-                MainForm mainForm = new MainForm();
+                MainForm mainForm = new MainForm(role);
                 mainForm.Show();
 
                 this.Hide(); 

@@ -15,11 +15,24 @@ namespace UnicomTICManagementSystem.View
     public partial class MarkForm : Form
     {
         private MarkController MarkController=new MarkController();
+        private string userRole;
         
-        public MarkForm()
+        public MarkForm(string role)
         {
             InitializeComponent();
+            userRole = role;
+            ApplyPermission();
             get_mark_info();
+        }
+        private void ApplyPermission()
+        {
+
+            if (userRole != "Student")
+            {
+                btn_add.Visible = true;
+                btn_delete.Visible = true;
+                btn_update.Visible = true;
+            }
         }
         private void get_mark_info()
         {

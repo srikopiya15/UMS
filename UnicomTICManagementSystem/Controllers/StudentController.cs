@@ -65,7 +65,7 @@ namespace UnicomTICManagementSystem.Controllers
         {
             using (var conn = DbConfic.GetConnection())
             {
-                using (SQLiteCommand cmd = new SQLiteCommand(@"SELECT * FROM Student WHERE Id=@Id", conn))
+                using (SQLiteCommand cmd = new SQLiteCommand(@"SELECT * FROM Student WHERE ID=@Id", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", Id);
                     using (var reader = cmd.ExecuteReader())
@@ -105,7 +105,7 @@ namespace UnicomTICManagementSystem.Controllers
         {
             using (var conn = DbConfic.GetConnection())
             {
-                string query = "UPDATE Student SET name = @name, address = @address, stream = @stream WHERE id = @id";
+                string query = "UPDATE Student SET name = @name, address = @address, stream = @stream WHERE ID = @id";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
@@ -123,11 +123,11 @@ namespace UnicomTICManagementSystem.Controllers
         {
             using (var conn = DbConfic.GetConnection())
             {
-                string query = "DELETE FROM Student WHERE ID=@Id";
+                string query = "DELETE FROM Student WHERE ID=@id";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Id", student.StudentId);
+                    cmd.Parameters.AddWithValue("@id", student.StudentId);
                     cmd.ExecuteNonQuery();
                 }
             }

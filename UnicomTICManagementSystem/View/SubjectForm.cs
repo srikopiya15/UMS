@@ -17,11 +17,26 @@ namespace UnicomTICManagementSystem.View
     {
         private SubjectController subjectController=new SubjectController();
         private int sub_id = -1;
+        private string userRole;
 
-        public SubjectForm()
+
+        public SubjectForm(string role)
         {
             InitializeComponent();
+            userRole = role;
+            ApplyPermission();
             get_subject_info();
+            
+        }
+        private void ApplyPermission()
+        {
+
+            if (userRole != "Admin")
+            {
+                btn_add.Visible = false;
+                btn_delete.Visible = false;
+                btn_update.Visible = false;
+            }
         }
         private void get_subject_info() 
         {

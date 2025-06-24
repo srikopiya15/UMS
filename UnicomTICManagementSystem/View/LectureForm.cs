@@ -18,11 +18,23 @@ namespace UnicomTICManagementSystem.View
 
         private LectureController lectureController=new LectureController();
         private int lec_id = -1;
-        public LectureForm()
+        string userRole;
+        public LectureForm(string role)
         {
             InitializeComponent();
+            userRole = role;
+            ApplyPermission();
             get_lecture_info();
-
+           
+        }
+        private void ApplyPermission()
+        {
+            if (userRole != "Admin")
+            {
+                btn_add.Visible = false;
+                btn_delete.Visible = false;
+                btn_update.Visible = false;
+            }
         }
         private void get_lecture_info() 
         {
@@ -81,7 +93,7 @@ namespace UnicomTICManagementSystem.View
 
             try
             {
-                int lec_id = Convert.ToInt32(dgv_lecture.SelectedRows[0].Cells["LecturerID"].Value);
+                int lec_id = Convert.ToInt32(dgv_lecture.SelectedRows[0].Cells["ID"].Value);
 
                 
                 Lecture lecture = new Lecture
@@ -112,7 +124,7 @@ namespace UnicomTICManagementSystem.View
                 return;
             }
 
-            int lec_id = Convert.ToInt32(dgv_lecture.SelectedRows[0].Cells["LecturerID"].Value);
+            int lec_id = Convert.ToInt32(dgv_lecture.SelectedRows[0].Cells["ID"].Value);
 
             DialogResult result = MessageBox.Show("Are you sure want to delete the lecture?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
@@ -123,7 +135,7 @@ namespace UnicomTICManagementSystem.View
                 };
 
                 LectureController lectureController = new LectureController();
-                lectureController.DeleteLecture(lec_id);
+                lectureController.DeleteLecture(lecture);
 
                 get_lecture_info();
             }
@@ -134,15 +146,13 @@ namespace UnicomTICManagementSystem.View
             if (dgv_lecture.SelectedRows.Count > 0)
             {
                 var row = dgv_lecture.SelectedRows[0];
-                var lecture = row.DataBoundItem as Lecture; 
-
-                if (lecture != null)
-                {
+                var lecture = (Lecture)row.DataBoundItem;
+                
                     lec_id = lecture.LecturerId;
                     name_txt.Text = lecture.LecturerName;
                     address_txt.Text = lecture.LecturerAddress;
                     email_txt.Text = lecture.LecturerEmail;
-                }
+               
             }
             else
             {

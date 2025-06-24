@@ -16,11 +16,24 @@ namespace UnicomTICManagementSystem.View
     {
         private ExamController examcontroller=new ExamController();
         private int ex_id = -1;
+        private string userRole;
 
-        public ExamForm()
+        public ExamForm(string role)
         {
             InitializeComponent();
+            userRole = role;
+            ApplyPermission();
             get_exam_info();
+        }
+        private void ApplyPermission()
+        {
+
+            if (userRole != "Student")
+            {
+                btn_add.Visible = true;
+                btn_delete.Visible = true;
+                btn_update.Visible = true;
+            }
         }
         private void get_exam_info() 
         {
