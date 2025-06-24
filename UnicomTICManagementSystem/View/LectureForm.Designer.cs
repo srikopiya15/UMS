@@ -144,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 369);
+            this.ClientSize = new System.Drawing.Size(601, 346);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgv_lecture);
             this.Controls.Add(this.btn_delete);

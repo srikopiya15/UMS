@@ -101,7 +101,7 @@
             // 
             // btn_update
             // 
-            this.btn_update.Location = new System.Drawing.Point(259, 186);
+            this.btn_update.Location = new System.Drawing.Point(12, 149);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(75, 23);
             this.btn_update.TabIndex = 6;
@@ -111,7 +111,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(139, 186);
+            this.btn_add.Location = new System.Drawing.Point(12, 97);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 7;
@@ -121,7 +121,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(383, 186);
+            this.btn_delete.Location = new System.Drawing.Point(12, 192);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 23);
             this.btn_delete.TabIndex = 8;
@@ -132,9 +132,9 @@
             // dgv_timetable
             // 
             this.dgv_timetable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_timetable.Location = new System.Drawing.Point(119, 237);
+            this.dgv_timetable.Location = new System.Drawing.Point(122, 157);
             this.dgv_timetable.Name = "dgv_timetable";
-            this.dgv_timetable.Size = new System.Drawing.Size(369, 201);
+            this.dgv_timetable.Size = new System.Drawing.Size(369, 177);
             this.dgv_timetable.TabIndex = 9;
             // 
             // label4
@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(601, 346);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgv_timetable);
             this.Controls.Add(this.btn_delete);

@@ -92,7 +92,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(164, 176);
+            this.btn_add.Location = new System.Drawing.Point(167, 167);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(62, 27);
             this.btn_add.TabIndex = 6;
@@ -102,7 +102,7 @@
             // 
             // btn_update
             // 
-            this.btn_update.Location = new System.Drawing.Point(275, 176);
+            this.btn_update.Location = new System.Drawing.Point(275, 167);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(62, 27);
             this.btn_update.TabIndex = 7;
@@ -112,7 +112,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(381, 176);
+            this.btn_delete.Location = new System.Drawing.Point(381, 167);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(62, 27);
             this.btn_delete.TabIndex = 8;
@@ -123,9 +123,9 @@
             // dgv_staff
             // 
             this.dgv_staff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_staff.Location = new System.Drawing.Point(83, 227);
+            this.dgv_staff.Location = new System.Drawing.Point(85, 200);
             this.dgv_staff.Name = "dgv_staff";
-            this.dgv_staff.Size = new System.Drawing.Size(446, 179);
+            this.dgv_staff.Size = new System.Drawing.Size(446, 144);
             this.dgv_staff.TabIndex = 9;
             this.dgv_staff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_staff_CellContentClick);
             // 
@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(601, 346);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgv_staff);
             this.Controls.Add(this.btn_delete);

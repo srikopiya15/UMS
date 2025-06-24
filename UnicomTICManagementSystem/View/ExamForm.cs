@@ -28,11 +28,11 @@ namespace UnicomTICManagementSystem.View
         private void ApplyPermission()
         {
 
-            if (userRole != "Student")
+            if (userRole != "Admin"+"Staff"+"Lecturer")
             {
-                btn_add.Visible = true;
-                btn_delete.Visible = true;
-                btn_update.Visible = true;
+                btn_add.Visible = false;
+                btn_delete.Visible = false;
+                btn_update.Visible = false;
             }
         }
         private void get_exam_info() 

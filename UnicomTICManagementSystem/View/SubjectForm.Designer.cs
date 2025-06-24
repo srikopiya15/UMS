@@ -83,7 +83,7 @@
             // dgv_subject
             // 
             this.dgv_subject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_subject.Location = new System.Drawing.Point(132, 221);
+            this.dgv_subject.Location = new System.Drawing.Point(120, 163);
             this.dgv_subject.Name = "dgv_subject";
             this.dgv_subject.Size = new System.Drawing.Size(422, 186);
             this.dgv_subject.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(197, 175);
+            this.btn_add.Location = new System.Drawing.Point(120, 82);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(63, 28);
             this.btn_add.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             // btn_update
             // 
-            this.btn_update.Location = new System.Drawing.Point(313, 175);
+            this.btn_update.Location = new System.Drawing.Point(121, 116);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(62, 28);
             this.btn_update.TabIndex = 6;
@@ -111,7 +111,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(416, 175);
+            this.btn_delete.Location = new System.Drawing.Point(32, 98);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(61, 28);
             this.btn_delete.TabIndex = 7;
@@ -133,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(601, 346);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_update);

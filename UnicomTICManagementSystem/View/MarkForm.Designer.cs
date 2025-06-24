@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(198, 83);
+            this.label1.Location = new System.Drawing.Point(198, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 0;
@@ -56,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(198, 109);
+            this.label2.Location = new System.Drawing.Point(198, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 1;
@@ -65,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(198, 135);
+            this.label3.Location = new System.Drawing.Point(201, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 2;
@@ -74,7 +74,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(198, 160);
+            this.label4.Location = new System.Drawing.Point(201, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // mark_txt
             // 
-            this.mark_txt.Location = new System.Drawing.Point(294, 160);
+            this.mark_txt.Location = new System.Drawing.Point(294, 146);
             this.mark_txt.Name = "mark_txt";
             this.mark_txt.Size = new System.Drawing.Size(151, 20);
             this.mark_txt.TabIndex = 7;
@@ -99,7 +99,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(186, 201);
+            this.btn_add.Location = new System.Drawing.Point(38, 78);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 9;
@@ -109,7 +109,7 @@
             // 
             // btn_update
             // 
-            this.btn_update.Location = new System.Drawing.Point(294, 201);
+            this.btn_update.Location = new System.Drawing.Point(38, 107);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(75, 23);
             this.btn_update.TabIndex = 10;
@@ -119,7 +119,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(414, 201);
+            this.btn_delete.Location = new System.Drawing.Point(38, 136);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 23);
             this.btn_delete.TabIndex = 11;
@@ -130,7 +130,7 @@
             // dgv_mark
             // 
             this.dgv_mark.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_mark.Location = new System.Drawing.Point(150, 254);
+            this.dgv_mark.Location = new System.Drawing.Point(105, 172);
             this.dgv_mark.Name = "dgv_mark";
             this.dgv_mark.Size = new System.Drawing.Size(397, 166);
             this.dgv_mark.TabIndex = 12;
@@ -144,7 +144,7 @@
             "Niro",
             "Inthu",
             "Sri"});
-            this.student_combo.Location = new System.Drawing.Point(294, 80);
+            this.student_combo.Location = new System.Drawing.Point(294, 65);
             this.student_combo.Name = "student_combo";
             this.student_combo.Size = new System.Drawing.Size(151, 21);
             this.student_combo.TabIndex = 13;
@@ -155,7 +155,7 @@
             this.subject_combo.Items.AddRange(new object[] {
             "Python",
             "CSharp"});
-            this.subject_combo.Location = new System.Drawing.Point(294, 107);
+            this.subject_combo.Location = new System.Drawing.Point(294, 92);
             this.subject_combo.Name = "subject_combo";
             this.subject_combo.Size = new System.Drawing.Size(151, 21);
             this.subject_combo.TabIndex = 14;
@@ -167,7 +167,7 @@
             "ExamA",
             "ExamB",
             "ExamC"});
-            this.type_combo.Location = new System.Drawing.Point(294, 132);
+            this.type_combo.Location = new System.Drawing.Point(294, 119);
             this.type_combo.Name = "type_combo";
             this.type_combo.Size = new System.Drawing.Size(151, 21);
             this.type_combo.TabIndex = 15;
@@ -176,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(601, 346);
             this.Controls.Add(this.type_combo);
             this.Controls.Add(this.subject_combo);
             this.Controls.Add(this.student_combo);

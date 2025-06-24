@@ -115,9 +115,9 @@
             // dgv_room
             // 
             this.dgv_room.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_room.Location = new System.Drawing.Point(149, 216);
+            this.dgv_room.Location = new System.Drawing.Point(150, 198);
             this.dgv_room.Name = "dgv_room";
-            this.dgv_room.Size = new System.Drawing.Size(363, 188);
+            this.dgv_room.Size = new System.Drawing.Size(363, 136);
             this.dgv_room.TabIndex = 7;
             this.dgv_room.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(601, 346);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgv_room);
             this.Controls.Add(this.btn_delete);
